@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Airbnb",
+        "logo": "https://th.bing.com/th/id/OIP.rGem3zNHL4QuQd26Hdu9ZAAAAA?rs=1&pid=ImgDetMain",
+        "domain": "airbnb.com",
+        "owner": "John Doe",
+        "address": "New York",
+        "linkedin": "airbnb",
+        "opportunities": 5,
+        "activities": 10
+    },
+    {
+        "id": 2,
+        "name": "Google",
+        "logo": "https://logos-world.net/wp-content/uploads/2020/09/Google-Logo.png",
+        "domain": "google.com",
+        "owner": "Jane Smith",
+        "address": "San Francisco",
+        "linkedin": "google",
+        "opportunities": 8,
+        "activities": 15
+    },
+    {
+        "id": 3,
+        "name": "Apple",
+        "logo": "https://www.svgrepo.com/show/161631/apple-logo.svg",
+        "domain": "apple.com",
+        "owner": "Michael Johnson",
+        "address": "Cupertino",
+        "linkedin": "apple",
+        "opportunities": 6,
+        "activities": 12
+    },
+    {
+        "id": 4,
+        "name": "Microsoft",
+        "logo": "https://www.freepnglogos.com/uploads/microsoft-logo-4.png",
+        "domain": "microsoft.com",
+        "owner": "Emily Brown",
+        "address": "Seattle",
+        "linkedin": "microsoft",
+        "opportunities": 4,
+        "activities": 8
+    }
+]
