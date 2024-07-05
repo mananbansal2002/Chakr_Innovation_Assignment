@@ -1,32 +1,36 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/dropdown-menu';
-import { backgroundChange } from '../app/store/ColorChange_';
 import { useSetRecoilState } from 'recoil';
+import { backgroundChange } from '../app/store/ColorChange_';
+import { Circle } from 'lucide-react'; // Assuming 'Circle' is your icon component
 
 const Appearance = () => {
     const setBackgroundColor = useSetRecoilState(backgroundChange);
-    const [position, setPosition] = useState('Light');
+    const [theme, setTheme] = useState('Light');
 
-    const handleColorChange = (backgroundColor, color) => {
+    const handleColorChange = (backgroundColor, color, newTheme) => {
         setBackgroundColor({ backgroundColor, color });
+        setTheme(newTheme);
     };
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10rem' }}>
-            <div style={{ width: '5rem' }}>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="outline" style={{ border: '1px solid blue' }}>Appearance</Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-70">
-                        <DropdownMenuSeparator />
-                        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                            <DropdownMenuRadioItem value="Light" onClick={() => handleColorChange('#eeeeee', '#444444')}>Light</DropdownMenuRadioItem>
-                            <DropdownMenuRadioItem value="Dark" onClick={() => handleColorChange('#121212', '#fffefc')}>Dark</DropdownMenuRadioItem>
-                        </DropdownMenuRadioGroup>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+                <div
+                    className={`flex items-center justify-center rounded-full h-10 w-10 cursor-pointer bg-white text-black ${
+                        theme === 'Light' ? 'border-2 border-blue-500' : 'border-2 border-transparent'
+                    }`}
+                    onClick={() => handleColorChange('#eeeeee', '#444444', 'Light')}
+                >
+                   
+                </div>
+                <div
+                    className={`flex items-center justify-center rounded-full h-10 w-10 cursor-pointer bg-black text-white ${
+                        theme === 'Dark' ? 'border-2 border-blue-500' : 'border-2 border-transparent'
+                    }`}
+                    onClick={() => handleColorChange('#121212', '#fffefc', 'Dark')}
+                >
+                   
+                </div>
             </div>
         </div>
     );
